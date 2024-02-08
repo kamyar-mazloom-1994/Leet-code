@@ -32,8 +32,11 @@ def is_valid(s: str) -> bool:
         for char in s:
             if char in hashmap:
                 stack.append(char)
-            elif char == hashmap[stack[-1]]:
-                stack.pop()
-            else:
+            elif len(stack) == 0 or char != hashmap[stack[-1]]:
                 return False
-        return True
+            else:
+                stack.pop()
+        if len(stack) == 0:
+            return True
+        else:
+            return False

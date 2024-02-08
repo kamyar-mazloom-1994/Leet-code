@@ -14,6 +14,8 @@ class MyTestCase(unittest.TestCase):
 
     def test_false(self):
         self.assertEqual(ValidParentheses.is_valid("([{})]"), False)
+        self.assertEqual(ValidParentheses.is_valid("(("), False)
+        self.assertEqual(ValidParentheses.is_valid(")["), False)
 
 
 if __name__ == "__main__":
